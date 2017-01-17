@@ -20,7 +20,7 @@ activity_totalsteps<-activity%>%group_by(date)%>%summarise(total_steps=sum(steps
 ```{r}
 ggplot(activity_totalsteps,aes(x=total_steps))+geom_histogram()
 ```
-![plot1](figure/Figure1)
+![plot1](figure/Figure1.png)
 
 
 * Calculate the mean of total steps each day :
@@ -42,7 +42,7 @@ activity_daily<-activity%>%group_by(interval)%>%summarise(mean_steps=mean(steps,
 ```{r}
 ggplot(activity_daily,aes(x=interval,y=mean_steps))+geom_line()+ggtitle("Daily Activity Pattern")+theme(plot.title=element_text(size=18,hjust=0.5))
 ```
-![plot2](figure/Figure2)
+![plot2](figure/Figure2.png)
 
 ## Imputing missing values
 * Calculate the number of missing data :
@@ -69,7 +69,7 @@ activity_imputed_total<-activity_imputed%>%group_by(date)%>%summarise(total_step
 ```{r}
 ggplot(activity_imputed_total,aes(x=total_steps))+geom_histogram()
 ```
-![plot3](figure/Figure3)
+![plot3](figure/Figure3.png)
 
 * Mean & Median
 ```{r}
@@ -86,4 +86,4 @@ activity_imputed2<-activity_imputed%>%group_by(interval,weekday)%>%summarise(Ave
 ```{r}
 ggplot(activity_imputed2,aes(x=interval,y=Average_Steps))+geom_line()+facet_grid(weekday~.)
 ```
-![plot4](figure/Figure4)
+![plot4](figure/Figure4.png)
