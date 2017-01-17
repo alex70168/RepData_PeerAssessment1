@@ -21,6 +21,7 @@ activity_totalsteps<-activity%>%group_by(date)%>%summarise(total_steps=sum(steps
 ggplot(activity_totalsteps,aes(x=total_steps))+geom_histogram()
 ```
 
+
 3. Calculate the mean of total steps each day :
 ```{r}
 mean(activity_totalsteps$total_steps)
