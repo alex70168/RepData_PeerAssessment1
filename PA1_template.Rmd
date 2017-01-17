@@ -7,7 +7,7 @@ library(ggplot2)
 ```
 
 ## Loading and preprocessing the data
-```{r,echo=TRUE}
+```{r}
 activity<-read.csv("activity.csv",1)
 ```
 ## What is mean total number of steps taken per day?
@@ -17,7 +17,7 @@ activity_totalsteps<-activity%>%group_by(date)%>%summarise(total_steps=sum(steps
 ```
 
 2. Plot histogram of total steps each day : 
-```{r}
+```{r,echo=T}
 ggplot(activity_totalsteps,aes(x=total_steps))+geom_histogram()
 ```
 
