@@ -1,13 +1,13 @@
 Title : "Reproducible Research: Peer Assessment 1"
 ===================
 ### Load the packages
-```{r,results='hide'}
+```{r}
 library(dplyr)
 library(ggplot2)
 ```
 
 ## Loading and preprocessing the data
-```{r}
+```{r,echo=TRUE}
 activity<-read.csv("activity.csv",1)
 ```
 ## What is mean total number of steps taken per day?
